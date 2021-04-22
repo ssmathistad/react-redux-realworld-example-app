@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "octumn/realworld_frontend"
-    registryCredential = ‘dockerhub’
+    registryCredential = 'dockerhub'
   }
   agent any
   stages {
