@@ -11,9 +11,16 @@ pipeline {
       }
     }
     stage('Building image') {
+      steps {
+        sh "docker build -t octumn/realworld_frontend:v1.1.$BUILD_NUMBER ."
+      }
+    }
+    stage('Building image') {
       steps{
-        script {
-          docker.build registry + ":$BUILD_NUMBER"
+        
+        withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'usr', passwordVariable: 'pwd')]) {
+            sh "docker login --username=usr --password=pwd"
+            sh "docker push octumn/realworld_frontend:v1.0.$BUILD_NUMBER"
         }
       }
     }
