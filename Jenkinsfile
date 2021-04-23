@@ -19,7 +19,7 @@ pipeline {
             //sh "echo 'pwd' | docker login --username=usr --password-stdin"
             //sh "echo $pwd | docker login --username=$usr --password-stdin"
             //sh "echo $pwd > docker login --username=$usr --password-stdin"
-            //sh "docker logout"
+            sh "docker logout"
             ////sh "echo pwd > docker login --username=usr --password-stdin" //denied: requested access to the resource is denied
             ////sh "echo pwd > docker login docker.io --username=usr --password-stdin" //denied: requested access to the resource is denied
             sh "echo pwd > docker login --username=usr --password-stdin docker.io"
