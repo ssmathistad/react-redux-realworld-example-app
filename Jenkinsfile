@@ -17,7 +17,8 @@ pipeline {
             //sh "docker login --username=usr --password=pwd"
             //sh "echo pwd | docker login --username=usr --password-stdin"
             //sh "echo 'pwd' | docker login --username=usr --password-stdin"
-            sh "echo $pwd | docker login --username=$usr --password-stdin"
+            //sh "echo $pwd | docker login --username=$usr --password-stdin"
+            sh "echo $pwd > docker login --username=$usr --password-stdin"
             sh "docker push octumn/realworld_frontend:v1.0.$BUILD_NUMBER"
         }
       }
