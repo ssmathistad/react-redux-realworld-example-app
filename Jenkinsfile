@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Building Image') {
       steps {
-        sh "docker build -t octumn/realworld_frontend:v1.1.$BUILD_NUMBER ."
+        sh "docker build -t octumn/realworld_frontend:v1.0.$BUILD_NUMBER ."
       }
     }
     stage('Pushing Image') {
