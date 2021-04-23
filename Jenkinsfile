@@ -24,7 +24,8 @@ pipeline {
             ////sh "echo pwd > docker login docker.io --username=usr --password-stdin" //denied: requested access to the resource is denied
             //sh "echo pwd > docker login --username=usr --password-stdin docker.io"
             //sh "docker login --username=usr --password=pwd docker.io"
-            sh "docker login --username=$usr --password=$pwd docker.io"
+            //sh "docker login --username=$usr --password=$pwd docker.io"
+            sh "docker login --username=$usr --password='$pwd' docker.io"
             sh "docker push octumn/realworld_frontend:v1.0.$BUILD_NUMBER"
         }
       }
