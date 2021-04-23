@@ -15,7 +15,7 @@ pipeline {
         sh "docker build -t octumn/realworld_frontend:v1.1.$BUILD_NUMBER ."
       }
     }
-    stage('Building image') {
+    stage('Pushing image') {
       steps{
         
         withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'usr', passwordVariable: 'pwd')]) {
